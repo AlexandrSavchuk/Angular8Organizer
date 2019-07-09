@@ -13,4 +13,16 @@ export class DateService {
     this.date.next(value);
     //console.log(this.date.value);
   }
+
+  changeDate (date: moment.Moment) {
+    const value =this.date.value.set({
+      date: date.date(),
+      month: date.month()
+    })
+    console.log('before'+this.date)
+    this.date.next(value)
+    console.log('after'+this.date)
+  }
+
+
 }
